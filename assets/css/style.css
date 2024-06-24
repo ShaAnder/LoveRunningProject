@@ -1,0 +1,21 @@
+/* wildcard selector to do all our vague rules, always at top to override */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+header {
+  background-color: lightcoral;
+}
+
+/* main body */
+main {
+  background-color: lightblue;
+}
+
+/* footer */
+footer {
+  background-color: orange;
+}

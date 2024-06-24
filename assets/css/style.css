@@ -1,6 +1,11 @@
 /* Import our fonts */
 @import url("https://fonts.googleapis.com/css2?family= Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 &family=Oswald:wght@200..700&display=swap");
 
+/* root options for color ect */
+:root {
+  --shadow-color: #3a3a3a;
+}
+
 /* wildcard selector to do all our vague rules, always at top to override */
 * {
   margin: 0;
@@ -13,13 +18,18 @@ body {
   display: flex;
   flex-direction: column;
   /* generic project styles */
-  color: #3a3a3a;
+  color: var(--shadow-color);
   font-family: "Lato", sans-serif;
 }
 
 /* header */
 header {
-  background-color: lightcoral;
+  background-color: #ffffff;
+  padding-left: 0 1rem;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  box-shadow: 0 2px 2px var(--shadow-color);
 }
 
 h1 {

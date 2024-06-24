@@ -1,15 +1,16 @@
 /* Import our fonts */
-@import url("https://fonts.googleapis.com/css2?family= Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900 &family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&display=swap");
 
 /* root options for color ect */
 :root {
   --shadow-color: #3a3a3a;
+  --white-color: #ffffff;
 }
 
 /* wildcard selector to do all our vague rules, always at top to override */
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -25,11 +26,15 @@ body {
 /* header */
 header {
   background-color: #ffffff;
-  padding-left: 0 1rem;
+  padding: 0 1rem;
   position: fixed;
   z-index: 99;
   width: 100%;
   box-shadow: 0 2px 2px var(--shadow-color);
+  /* align items in a row */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
 header a {
@@ -58,11 +63,39 @@ h1 {
   border-bottom: 1px solid var(--shadow-color);
 }
 
+/* Navbar styles + dropdown toggle */
+
+nav {
+  position: absolute;
+  background-color: var(--white-color);
+  width: 100%;
+  left: 0;
+  padding: 0 1rem;
+  box-shadow: 0 2px 2px var(--shadow-color);
+  display: none;
+  /* sets the top of the navbox to be bottom of the parent */
+  top: 100%;
+}
+
+/* Nav toggle */
+#nav-toggle:checked ~ nav {
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  font-size: 2rem;
+}
+
 /* main body */
 main {
   background-color: lightblue;
   /* Make main element take up any surplus space and push footer down */
   flex: 1 0 auto;
+  margin-top: 47px;
 }
 
 /* footer */

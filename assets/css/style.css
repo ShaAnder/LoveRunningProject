@@ -103,6 +103,9 @@ main {
   /* Make main element take up any surplus space and push footer down */
   flex: 1 0 auto;
   margin-top: 47px;
+  /* Flex properties for chil elements */
+  display: flex;
+  flex-direction: column;
 }
 
 /* hero content */
@@ -206,6 +209,24 @@ hr {
   color: #fafafa;
 }
 
+/* Gallery Page */
+#photos img {
+  width: 100%;
+  line-height: 1em;
+}
+
+#photos {
+  line-height: 0;
+}
+
+/* Sign-up */
+#signup {
+  background: url("../images/signup-image.webp");
+  background-size: cover;
+  background-position: 75%;
+  flex-grow: 1;
+}
+
 /* footer */
 #social-networks {
   text-align: center;
@@ -219,6 +240,14 @@ hr {
   font-size: 160%;
   padding: 5%;
   color: var(--shadow-color);
+}
+
+/* Media query: large or landscape phones (576px and up */
+@media screen and (min-width: 576px) {
+  #photos {
+    column-count: 2;
+    column-gap: 0;
+  }
 }
 
 /* Media Query: Tablets and larger (768px+) */
@@ -276,12 +305,22 @@ hr {
     text-align: end;
     align-self: flex-end;
   }
+
+  /* gallery */
+  #photos {
+    column-count: 3;
+  }
 }
 
 /* Laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   #menu a:hover {
     border-bottom: 1px solid var(--shadow-color);
+  }
+
+  /* gallery */
+  #photos {
+    column-count: 4;
   }
 }
 
